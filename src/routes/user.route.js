@@ -10,7 +10,7 @@ router.get("/:id", getusers);
 router.post("/register", register);
 router.post("/login", login);
 router.put("/:id", auth, updateUser);
-//router.put("/:id",  updateUser);
+
 
 
 module.exports = router;

@@ -1,7 +1,6 @@
 
 const express = require("express");
 const userRouter = require("@routes/user.route");
-//const employeeRouter=require("@routes/employee.route");
 const deptRoute = require("@routes/dept.route");
 const teamRoute = require("@routes/team.route");
 const projectRoute = require("@routes/project.route");
@@ -21,8 +20,6 @@ app.use("/project", projectRoute);
 app.use("/attendance", attendanceRoute);
 app.use("/payroll", payroll);
 
-
-//app.use("/employee",employeeRouter);
 
 
 module.exports = app

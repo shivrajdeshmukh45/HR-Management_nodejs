@@ -26,6 +26,8 @@ const userSchema = new mongoose.Schema({
     default: "EMPLOYEE"
   },
 
+  
+
   department: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Department"
