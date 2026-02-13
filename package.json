@@ -1,0 +1,30 @@
+{
+  "name": "hrm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "jsconfig": "^0.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "module-alias": "^2.3.4",
+    "mongoose": "^9.2.0",
+    "nodemon": "^3.1.11"
+  },
+  "_moduleAliases": {
+    "@root": "src",
+    "@routes": "src/routes",
+    "@controllers": "src/controller",
+    "@models": "src/models",
+    "@middlewares": "src/middlewares",
+    "@config": "src/config"
+  }
+}
