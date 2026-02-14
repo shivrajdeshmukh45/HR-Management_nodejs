@@ -11,7 +11,7 @@ const projectSchema = new mongoose.Schema({
   description: {
     type: String
   },
-
+ 
 
   department: {
     type: mongoose.Schema.Types.ObjectId,

@@ -1,7 +1,7 @@
 
 
     const roleMiddleware = (...allowedRoles) => {
-    console.log(allowedRoles)
+//    console.log(allowedRoles)
     return (req, res, next) => {
 
         if (!req.user) {

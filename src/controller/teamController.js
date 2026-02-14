@@ -17,7 +17,7 @@ const getTeam = async (req, res) => {
             res.status(200).json(teams);
         }
     } catch (err) {
-        //  res.status()
+        next(err);
     }
 }
 
@@ -55,7 +55,7 @@ const registerTeam = async (req, res) => {
         })
 
     } catch (err) {
-
+        next(err);
     }
 }
 
@@ -74,7 +74,7 @@ const updateTeam = async (req, res) => {
         })
 
     } catch (err) {
-        res.status(err)
+        next(err);
     }
 
 }

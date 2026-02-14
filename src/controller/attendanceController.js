@@ -16,7 +16,7 @@ const getAttendanceEmployee = async (req, res) => {
         }
 
     } catch (err) {
-        res.status(err);
+      next(err);
     }
 }
 
@@ -40,7 +40,7 @@ const createAttendance = async (req, res) => {
 
 
     } catch (err) {
-        res.status(err);
+      next(err);
     }
 
 }
@@ -62,7 +62,7 @@ const getAttendanceByEmployee = async (req, res, next) => {
         })
 
     } catch (err) {
-        res.status(500).json({ error: err.message })
+              next(err);
 
     }
 

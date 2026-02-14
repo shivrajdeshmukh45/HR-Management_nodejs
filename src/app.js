@@ -6,10 +6,14 @@ const teamRoute = require("@routes/team.route");
 const projectRoute = require("@routes/project.route");
 const attendanceRoute = require("@routes/attendance.routes")
 const payroll = require("@routes/payrollRoute");
+const helmet=require("helmet");
+const errorMiddleware =require("@middlewares/error.middleware")
 
 
 
 const app = express();
+app.use(helmet())
+app.use(errorMiddleware);
 app.use(express.json());
 
 

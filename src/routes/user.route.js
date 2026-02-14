@@ -6,8 +6,9 @@ const auth = require("@middlewares/Auth");
 
 const router = express.Router()
 
-router.get("/abc{/:id}", getusers);
-//router.get("/:id", getUserById);
+// router.get("/{/:id}", getusers);
+router.get("/", getusers);
+router.get("/:id", getUserById);
 router.post("/register", register);
 router.post("/login", login);
 router.put("/:id", auth, updateUser);
