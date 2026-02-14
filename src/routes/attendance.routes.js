@@ -5,6 +5,9 @@ const role = require("@middlewares/role.middleware");
 
 
 
+
+
+
 const router = express.Router()
 router.get("/employee/:employeeId",auth,role("ADMIN","HR") ,getAttendanceByEmployee);   //http://localhost:3000/attendance/employee/id
 router.get("/",auth,role("ADMIN","HR") ,getAttendanceEmployee);

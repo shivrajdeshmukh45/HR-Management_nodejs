@@ -9,8 +9,8 @@
       "@routes/*": ["src/routes/*"],
       "@controllers/*": ["src/controller/*"],
       "@models/*": ["src/models/*"],
+      "@db/*":["src/db"],
       "@middlewares/*": ["src/middleware/*"],
-      "@db/*":["src/db"]
      
     }
   }

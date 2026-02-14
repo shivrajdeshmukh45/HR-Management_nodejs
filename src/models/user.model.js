@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const Department = require("@models/department.model");
 
 
+
+
 const userSchema = new mongoose.Schema({
 
   name: {
@@ -26,7 +28,7 @@ const userSchema = new mongoose.Schema({
     default: "EMPLOYEE"
   },
 
-  
+
 
   department: {
     type: mongoose.Schema.Types.ObjectId,

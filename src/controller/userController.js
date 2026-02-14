@@ -9,9 +9,9 @@ const Department = require("@models/department.model");
 const getusers = async (req, res, next) => {
 
     try {
-
-        if (req.params.id) {
-            const user = await User.findById({ _id: req.params.id })
+          const { id } = req.params;
+        if (id) {
+            const user = await User.findById(id);
             return res.status(200).json({
                 message: "User  fetched...!",
                 user: user
@@ -31,6 +31,19 @@ const getusers = async (req, res, next) => {
 
 
 
+const getUserById = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json(user);
+  } catch (err) {
+    next(err);
+  }
+};
 
 
 const register = async (req, res) => {
@@ -129,5 +142,5 @@ const updateUser = async (req, res) => {
 
 
 
-module.exports = { login, register, getusers, updateUser }
+module.exports = { login, register, getusers, updateUser,getUserById }
 
