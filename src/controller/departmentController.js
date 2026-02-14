@@ -17,8 +17,8 @@ const createDept = async (req, res, next) => {
         })
 
 
-    } catch (err) {
-        next(err)
+    } catch (error) {
+        next(error);
     }
 }
 
@@ -32,8 +32,8 @@ const getDept = async (req, res, next) => {
         })
 
 
-    } catch (err) {
-        next(err)
+    } catch (error) {
+        next(error)
     }
 }
 

@@ -11,8 +11,8 @@ const getPayroll = async (req, res) => {
             const payrolls = await Payroll.find();
             res.status(200).json(payrolls);
         }
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 }
 
@@ -33,8 +33,8 @@ const createPayroll = async (req, res) => {
         res.status(201).json({
             message: "PayRoll Added ...!"
         })
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 
 }
@@ -53,8 +53,8 @@ const payrollUpdate = async (req, res) => {
             message: "Payroll  updated ...!"
         })
 
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 }
 

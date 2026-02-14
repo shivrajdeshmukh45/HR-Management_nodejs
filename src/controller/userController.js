@@ -2,87 +2,84 @@ const mongoose = require("mongoose");
 const User = require("@models/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const Department = require("@models/department.model");
+
 
 
 
 const getusers = async (req, res, next) => {
 
     try {
-          const { id } = req.params;
-        if (id) {
-            const user = await User.findById(id);
-            return res.status(200).json({
-                message: "User  fetched...!",
-                user: user
-            })
-        } else {
-            const users = await User.find();
-            return res.status(200).json({
-                message: "Users are Fetched..",
-                data: users
-            })
-        }
 
-    } catch (err) {
-        next(err)
+        const users = await User.find(req.query);
+        return res.status(200).json({
+            message: "Users are Fetched..",
+            data: users
+        })
+    } catch (error) {
+
+        next(error);
+
     }
 }
 
 
 
+
+
 const getUserById = async (req, res, next) => {
-  try {
-    const user = await User.findById(req.params.id);
+    try {
+        const user = await User.findById(req.params.id);
 
-    if (!user) {
-      return res.status(404).json({ message: "User not found" });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        res.status(200).json(user);
+    } catch (error) {
+        next(error);
     }
-
-    res.status(200).json(user);
-  } catch (err) {
-    next(err);
-  }
 };
 
 
 const register = async (req, res) => {
 
-try{
-    
-    const { name,
-        email,
-        password,
-        role,
-        department,
-        designation,
-        joiningDate,
-        salary,
-        managerId,
-        isActive } = req.body;
+    try {
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+        const { name,
+            email,
+            password,
+            role,
+            department,
+            designation,
+            joiningDate,
+            salary,
+            managerId,
+            isActive } = req.body;
 
-    await User.create({
-        name,
-        email,
-        password: hashedPassword,
-        role,
-        department,
-        designation,
-        joiningDate,
-        salary,
-        managerId,
-        isActive,
-    });
 
-    res.status(201).json({
-        message: "User registered successfully"
-    });
-}catch(error){
-    next(error)
-    
-}
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        await User.create({
+            name,
+            email,
+            password: hashedPassword,
+            role,
+            department,
+            designation,
+            joiningDate,
+            salary,
+            managerId,
+            isActive,
+        });
+
+        res.status(201).json({
+            message: "User registered successfully"
+        });
+    } catch (error) {
+        next(error)
+
+    }
 };
 
 
@@ -139,7 +136,8 @@ const updateUser = async (req, res) => {
             message: "User updated ...!"
         })
 
-    } catch (err) {
+    } catch (error) {
+        next(error)
 
     }
 
@@ -147,5 +145,5 @@ const updateUser = async (req, res) => {
 
 
 
-module.exports = { login, register, getusers, updateUser,getUserById }
+module.exports = { login, register, getusers, updateUser, getUserById }
 

@@ -1,5 +1,5 @@
 const express = require("express")
-const { login, register, getusers, updateUser,getUserById } = require("@controllers/userController");
+const { login, register, getusers, updateUser, getUserById } = require("@controllers/userController");
 
 const auth = require("@middlewares/Auth");
 

@@ -1,7 +1,7 @@
-const errorMiddleware= async(err,req,res,next) =>{
-    const status= err.status || 500;
-    const message=err.message|| "Backend issue...!";
-    const extraDetail=err.extraDetails || "Error from backend";
+const errorMiddleware = async (err, req, res, next) => {
+    const status = err.status || 500;
+    const message = err.message || "Backend issue...!";
+    const extraDetail = err.extraDetails || "Error from backend";
 
     return res.status(status).json({
         message,
@@ -12,4 +12,4 @@ const errorMiddleware= async(err,req,res,next) =>{
 
 }
 
-module.exports=errorMiddleware;
+module.exports = errorMiddleware;

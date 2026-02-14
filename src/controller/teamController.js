@@ -16,8 +16,8 @@ const getTeam = async (req, res) => {
             const teams = await Team.find();
             res.status(200).json(teams);
         }
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 }
 
@@ -54,8 +54,8 @@ const registerTeam = async (req, res) => {
             message: "Team Created....!"
         })
 
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 }
 
@@ -73,8 +73,8 @@ const updateTeam = async (req, res) => {
             message: "User updated ...!"
         })
 
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        next(error);
     }
 
 }

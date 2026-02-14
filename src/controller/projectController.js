@@ -17,7 +17,7 @@ const getProjects = async (req, res) => {
             res.status(200).json(teams);
         }
     } catch (err) {
-      next(err);
+        next(err);
     }
 }
 
@@ -60,7 +60,7 @@ const createProject = async (req, res) => {
         })
 
     } catch (err) {
-      next(err);
+        next(err);
     }
 }
 
@@ -79,7 +79,7 @@ const updateProject = async (req, res) => {
         })
 
     } catch (err) {
-      next(err);
+        next(err);
     }
 
 }

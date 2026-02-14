@@ -16,7 +16,7 @@ const getAttendanceEmployee = async (req, res) => {
         }
 
     } catch (err) {
-      next(err);
+        next(err);
     }
 }
 
@@ -40,7 +40,7 @@ const createAttendance = async (req, res) => {
 
 
     } catch (err) {
-      next(err);
+        next(err);
     }
 
 }
@@ -62,10 +62,10 @@ const getAttendanceByEmployee = async (req, res, next) => {
         })
 
     } catch (err) {
-              next(err);
+        next(err);
 
     }
 
 }
 
-module.exports = { getAttendanceEmployee, createAttendance ,getAttendanceByEmployee}
+module.exports = { getAttendanceEmployee, createAttendance, getAttendanceByEmployee }
